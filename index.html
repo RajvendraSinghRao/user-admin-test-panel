@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>User Page</title>
+</head>
+<body>
+  <h2 id="welcome"></h2>
+  <p id="notice"></p>
+
+  <script>
+    fetch("https://your-username.github.io/your-repo-name/content.json")
+      .then(response => response.json())
+      .then(data => {
+        document.getElementById("welcome").innerText = data.welcomeText;
+        document.getElementById("notice").innerText = data.announcement;
+      });
+  </script>
+</body>
+</html>
